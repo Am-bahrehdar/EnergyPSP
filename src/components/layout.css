@@ -222,3 +222,17 @@ pre tt:before,
 pre tt:after {
   content: none;
 }
+html,
+body {
+  height: 100%;
+}
+
+.layout-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.layout-content {
+  flex: 1;
+}

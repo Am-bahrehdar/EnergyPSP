@@ -1,0 +1,54 @@
+.footer {
+  background: #31374d;
+  padding: 26px 80px;
+}
+
+.link {
+  color: #f4f4f4;
+  @media (max-width: 1024px) {
+    font-size: 14px;
+  }
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
+  @media (max-width: 576px) {
+    font-size: 12px;
+  }
+
+  &:hover {
+    color: #f4f4f4;
+  }
+}
+
+.copyRight {
+  font-family: "Manrope", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 35px;
+  color: #ffffff;
+  @media (max-width: 768px) {
+    line-height: 30px;
+  }
+
+  @media screen and (max-width: 575.98px) {
+    font-size: 12px;
+  }
+}
+.logo {
+  width: 80px;
+  max-height: 80px;
+  @media (max-width: 1440px) {
+    width: 140px;
+    max-height: 75px;
+  }
+  @media (max-width: 768px) {
+    max-height: 60px;
+    max-width: 90%;
+  }
+
+  @media (max-width: 576px) {
+    max-height: 50px;
+    max-width: 80px;
+  }
+}
