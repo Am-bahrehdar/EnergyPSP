@@ -9,10 +9,10 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Simple Starter`,
-    description: `A simple Gatsby project starter.`,
-    author: `@yourname`,
-    siteUrl: `https://yoursiteurl.com/`,
+    title: `Energypsp`,
+    description: `Professional Service Provider`,
+    author: `Amir Bahrehdar`,
+    siteUrl: `https://www.energypsp.com`,
   },
   plugins: [
     `gatsby-plugin-image`,
@@ -29,12 +29,12 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-simple-starter`,
-        short_name: `simple-starter`,
+        name: `Energypsp `,
+        short_name: `Energypsp`,
         start_url: `/`,
         background_color: `#ffffff`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // Adjust or replace with your custom icon.
+        icon: `src/images/Energypsp-Icon.png`,
       },
     },
   ],

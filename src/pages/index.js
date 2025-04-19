@@ -2,7 +2,7 @@ import * as React from "react"
 import Header from "../components/header"
 import Carousel from "../components/Carousel/Index"
 import FooterComponent from "../components/footer/index"
-import ProductCard from "../components/ProductCard/index"
+import ProductCard from "../components/productCard/index"
 
 const IndexPage = () => (
   <>
