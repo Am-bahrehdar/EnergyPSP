@@ -1,17 +1,20 @@
 import React from "react"
 import classNames from "classnames"
 import * as styles from "./styles.module.scss"
-import Pipe from "../../images/SVG/pipe-1.svg"
-import Valve from "../../images/SVG/Valve.svg"
-import Gasket from "../../images/SVG/Gasket.svg"
-import Fitting from "../../images/SVG/Fitting.svg"
+import Pipe from "../../images/SVG/Plate -sheet.png"
 import { Link } from "gatsby"
 
 const products = [
-  { title: "Pipe", icon: Pipe, link: "/Products/pipe/" },
-  { title: "Valve", icon: Valve, link: "/Products/valve" },
-  { title: "Gasket & Flange", icon: Gasket, link: "/Products/gasket-flange" },
-  { title: "Fitting", icon: Fitting, link: "/Products/fitting" },
+  { title: "Tube", icon: Pipe, link: "/Products/tube/" },
+  { title: "Pipe & Fitting", icon: Pipe, link: "/Products/pipe-fitting/" },
+  { title: "Plate & Sheet", icon: Pipe, link: "/Products/plate-sheet" },
+  { title: "Structural", icon: Pipe, link: "/Products/structural" },
+  {
+    title: "Forgings & Flanges",
+    icon: Pipe,
+    link: "/Products/forgings-flanges",
+  },
+  { title: "Valve", icon: Pipe, link: "/Products/valve" },
 ]
 
 const ProductCard = () => {
@@ -20,7 +23,7 @@ const ProductCard = () => {
       <h2 className="text-center fw-bold mb-5">Products</h2>
       <div className="row g-4">
         {products.map((item, idx) => (
-          <div key={idx} className="col-6 col-md-3">
+          <div key={idx} className="col-6 col-md-4">
             <Link to={item.link} className="text-decoration-none text-dark">
               <div className={classNames(styles.card, "text-center")}>
                 <div className={classNames(styles.iconWrapper, "mx-auto")}>
