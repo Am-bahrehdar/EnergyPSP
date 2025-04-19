@@ -101,17 +101,13 @@ const Header = () => {
               <Link
                 className="nav-link text-light"
                 aria-current="page"
-                to="/About us"
+                to="/about-us"
               >
                 About Us
               </Link>
             </li>
             <li className="nav-item">
-              <Link
-                className="nav-link text-light"
-                aria-current="page"
-                to="/home"
-              >
+              <Link className="nav-link text-light" aria-current="page" to="/">
                 Home
               </Link>
             </li>

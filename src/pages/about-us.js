@@ -5,7 +5,6 @@ import FooterComponent from "../components/footer/index"
 const AboutUs = () => {
   return (
     <>
-      <Header />
       <div>
         <div className="container py-5">
           <h1 className="text-center mb-4  ">About Us</h1>
@@ -17,7 +16,6 @@ const AboutUs = () => {
           </p>
         </div>
       </div>
-      <FooterComponent />
     </>
   )
 }
