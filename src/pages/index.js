@@ -1,14 +1,17 @@
 import * as React from "react"
-import Header from "../components/header"
+import Seo from "../components/seo"
 import Carousel from "../components/Carousel/Index"
-import FooterComponent from "../components/footer/index"
 import ProductCard from "../components/ProductCard/index"
 
 const IndexPage = () => (
   <>
+    <Seo
+      title="Home"
+      description="Welcome to Energy PSP – your source for industrial piping, valves, and gaskets."
+    />
     <main>
-      <ProductCard></ProductCard>
-      <Carousel></Carousel>
+      <ProductCard />
+      <Carousel />
     </main>
   </>
 )

@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap");
+
+/* landing page style */
+
+.general-sections-title {
+  color: #30384d;
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 116.1%;
+  margin: 0;
+  text-align: center;
+  text-transform: capitalize;
+
+  span {
+    color: #354fa9;
+  }
+
+  @media screen and (max-width: 1400px) {
+    font-size: 30px;
+  }
+
+  @media screen and (max-width: 767.98px) {
+    font-size: 26px;
+  }
+}
+
+.general-sections-description {
+  color: #30384d;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+  margin-top: 12px;
+
+  @media screen and (max-width: 1400px) {
+    font-size: 20px;
+  }
+
+  @media screen and (max-width: 767.98px) {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+.primary-container {
+  margin: 0 10px 32px 10px;
+
+  @media screen and (min-width: 992px) {
+    margin: 0 30px 30px 30px;
+  }
+}
+
+.container-exact {
+  max-width: 1800px;
+
+  @media screen and (max-width: 767.98px) {
+    padding: 0 10px !important;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .text-md-start {
+    text-align: left;
+  }
+}
+
+.video-js {
+  width: 100%;
+  height: 100%;
+}
+
+.dots {
+  justify-content: center;
+}
+
+.dot {
+  border: none;
+  width: 10px;
+  height: 10px;
+  background: #c5c5c5;
+  border-radius: 50%;
+  margin: 0 5px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.dot:focus {
+  outline: none;
+}
+
+.dot.active {
+  background: #000;
+}
+
+.course-col {
+  padding: 0 32px;
+}
+
+@media screen and (max-width: 767.98px) {
+  .course-col {
+    padding: 0;
+  }
+}
+
+.text-blue {
+  color: #354fa9;
+}
+
+.custom-tooltip .tooltip-inner {
+  max-width: 380px;
+  padding: 15px 0;
+  width: auto;
+}
+
+.tooltip-wrapper .tooltip-img {
+  height: auto;
+  width: 350px;
+}
+
+.react-responsive-modal-modal {
+  min-width: calc(min(440px, 90vw));
+
+  form {
+    width: 100%;
+  }
+}

@@ -1,6 +1,4 @@
 import * as React from "react"
-import Header from "../components/header"
-import FooterComponent from "../components/footer/index"
 
 const AboutUs = () => {
   return (
