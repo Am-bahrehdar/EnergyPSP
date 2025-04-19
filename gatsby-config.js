@@ -12,7 +12,7 @@ module.exports = {
     title: `Energypsp`,
     description: `Professional Service Provider`,
     author: `Amir Bahrehdar`,
-    siteUrl: `https://www.energypsp.com`,
+    siteUrl: `https://www.energypsp.com`, // Required for sitemap
   },
   plugins: [
     `gatsby-plugin-image`,
@@ -35,6 +35,14 @@ module.exports = {
         background_color: `#ffffff`,
         display: `minimal-ui`,
         icon: `src/images/Energypsp-Icon.png`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        output: `/sitemap.xml`,
+        // optionally exclude certain paths:
+        // excludes: ["/privacy", "/terms"],
       },
     },
   ],

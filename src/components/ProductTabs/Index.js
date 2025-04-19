@@ -1,0 +1,83 @@
+import React, { useState, useEffect, useRef } from "react"
+import PropTypes from "prop-types"
+import * as styles from "./styles.module.scss"
+import classNames from "classnames"
+
+const ProductTabs = ({ summary, variants }) => {
+  const variantKeys = Object.keys(variants)
+  const [activeTab, setActiveTab] = useState(variantKeys[0])
+  const sectionRef = useRef(null)
+
+  // Set tab from URL param on mount
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search)
+    const urlTab = params.get("tab")
+
+    if (urlTab && variantKeys.includes(urlTab)) {
+      setActiveTab(urlTab)
+
+      // Scroll into view
+      setTimeout(() => {
+        sectionRef.current?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        })
+      }, 100)
+    }
+  }, [variantKeys])
+
+  return (
+    <div ref={sectionRef} className="container py-5">
+      {/* Summary */}
+      <div className={styles.summary}>
+        <h1 className="fw-bold mb-3">{summary.title}</h1>
+        <p>{summary.description}</p>
+      </div>
+
+      {/* Tabs */}
+      <ul className={classNames("nav nav-tabs", styles.tabs)}>
+        {variantKeys.map(key => (
+          <li className="nav-item" key={key}>
+            <button
+              className={classNames("nav-link", {
+                active: activeTab === key,
+              })}
+              onClick={() => setActiveTab(key)}
+            >
+              {key}
+            </button>
+          </li>
+        ))}
+      </ul>
+
+      {/* Content */}
+      <div className={classNames("tab-content", styles.tabContent)}>
+        <div className="text-center mt-4">
+          <h3 className="fw-semibold">{variants[activeTab].title}</h3>
+          <p>{variants[activeTab].description}</p>
+          <img
+            src={variants[activeTab].image}
+            alt={variants[activeTab].title}
+            className={styles.image}
+          />
+        </div>
+      </div>
+    </div>
+  )
+}
+
+ProductTabs.propTypes = {
+  summary: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+  }),
+  variants: PropTypes.objectOf(
+    PropTypes.shape({
+      title: PropTypes.string,
+      description: PropTypes.string,
+      image: PropTypes.string,
+    })
+  ),
+}
+
+export default ProductTabs

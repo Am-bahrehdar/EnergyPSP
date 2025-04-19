@@ -1,10 +1,14 @@
 import React from "react"
+import ProductTabs from "../../components/ProductTabs/Index"
+import pipeFittingData from "../../productsdata/pipefittingdata"
 
-const PipeFittingPage = () => (
-  <div className="container py-5">
-    <h1>Pipe</h1>
-    <p>This page contains information about pipes.</p>
-  </div>
-)
+const PipeFittingPage = () => {
+  return (
+    <ProductTabs
+      summary={pipeFittingData.summary}
+      variants={pipeFittingData.variants}
+    />
+  )
+}
 
 export default PipeFittingPage
