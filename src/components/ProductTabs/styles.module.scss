@@ -33,18 +33,24 @@
   h3 {
     color: #222;
     margin-bottom: 1rem;
+    text-align: left;
   }
 
   p {
     color: #444;
-    max-width: 600px;
-    margin: 0 auto 1rem;
+    max-width: 500px;
+    margin-bottom: 1rem;
+
+    // Remove center alignment
+    margin-left: 0;
+    margin-right: 0;
+    text-align: left;
   }
 }
-
 .image {
   max-width: 300px;
   width: 100%;
   height: auto;
   margin-top: 1rem;
+  border-radius: 10px;
 }

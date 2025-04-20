@@ -28,7 +28,7 @@ const ProductTabs = ({ summary, variants }) => {
 
   return (
     <div ref={sectionRef} className="container py-5">
-      {/* Summary */}
+      {/* Summary (global, top section) */}
       <div className={styles.summary}>
         <h1 className="fw-bold mb-3">{summary.title}</h1>
         <p>{summary.description}</p>
@@ -50,16 +50,23 @@ const ProductTabs = ({ summary, variants }) => {
         ))}
       </ul>
 
-      {/* Content */}
+      {/* Tab Content */}
       <div className={classNames("tab-content", styles.tabContent)}>
-        <div className="text-center mt-4">
-          <h3 className="fw-semibold">{variants[activeTab].title}</h3>
-          <p>{variants[activeTab].description}</p>
-          <img
-            src={variants[activeTab].image}
-            alt={variants[activeTab].title}
-            className={styles.image}
-          />
+        <div className="row align-items-center mt-4 g-2">
+          {/* Text Column */}
+          <div className="col-md-6 text-center text-md-start mb-4 mb-md-0">
+            <h3 className="fw-semibold">{variants[activeTab].title}</h3>
+            <p>{variants[activeTab].description}</p>
+          </div>
+
+          {/* Image Column */}
+          <div className="col-md-6 text-center">
+            <img
+              src={variants[activeTab].image}
+              alt={variants[activeTab].title}
+              className={styles.image}
+            />
+          </div>
         </div>
       </div>
     </div>

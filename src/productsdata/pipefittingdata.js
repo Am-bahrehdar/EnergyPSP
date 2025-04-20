@@ -1,3 +1,4 @@
+import CarbonSteel from "../images/product/carbon-steel-lsaw-pipe.jpg"
 const pipeFittingData = {
   summary: {
     title: "Pipe & Fittings",
@@ -10,7 +11,7 @@ const pipeFittingData = {
       title: "Carbon Steel Pipe & Fittings",
       description:
         "Carbon steel pipes and fittings are widely used in industrial applications for their strength, durability, and cost-effectiveness. They're ideal for high-pressure and high-temperature systems.",
-      image: "/images/products/carbon-steel.png",
+      image: CarbonSteel,
     },
     "Stainless Steel": {
       title: "Stainless Steel Pipe & Fittings",

@@ -124,3 +124,14 @@
     width: 100%;
   }
 }
+/* global-styles.scss */
+
+.pageWrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.mainContent {
+  flex-grow: 1;
+}

@@ -72,27 +72,39 @@ const Header = () => {
               </a>
               <ul className="dropdown-menu">
                 <li>
-                  <Link className="dropdown-item" to="/Products/design">
-                    Design
+                  <Link className="dropdown-item" to="/Products/tube/">
+                    Tube
                   </Link>
                 </li>
                 <li>
-                  <Link className="dropdown-item" to="/Products/installation">
-                    Installation
+                  <Link className="dropdown-item" to="/Products/pipe-fitting/">
+                    Pipe & Fitting
                   </Link>
                 </li>
                 <li>
-                  <Link className="dropdown-item" to="/Products/maintenance">
-                    Maintenance
+                  <Link className="dropdown-item" to="/Products/plate-sheet">
+                    Plate & Sheet
                   </Link>
                 </li>
                 <li>
-                  <hr className="dropdown-divider" />
+                  <Link className="dropdown-item" to="Products/structural">
+                    Structural
+                  </Link>
                 </li>
                 <li>
-                  <Link className="dropdown-item" to="/Products/custom">
-                    Custom Solutions
-                  </Link>
+                  <li>
+                    <Link
+                      className="dropdown-item"
+                      to="Products/forgings-flanges"
+                    >
+                      Forgings & Flanges
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="dropdown-item" to="Products/valve">
+                      Valve
+                    </Link>
+                  </li>
                 </li>
               </ul>
             </li>
