@@ -1,4 +1,6 @@
 import CarbonSteel from "../images/product/carbon-steel-lsaw-pipe.jpg"
+import StainlessSteelPipeFittings from "../images/product/Stainless-Steel-Pipe-Fittings.jpg"
+import CopperPipeFittings from "../images/product/Copper-Pipe -Fittings.png"
 const pipeFittingData = {
   summary: {
     title: "Pipe & Fittings",
@@ -17,13 +19,13 @@ const pipeFittingData = {
       title: "Stainless Steel Pipe & Fittings",
       description:
         "Known for their corrosion resistance, stainless steel fittings are used in food processing, chemical plants, and marine environments where hygiene and durability are essential.",
-      image: "/images/products/stainless-steel.png",
+      image: StainlessSteelPipeFittings,
     },
     Copper: {
       title: "Copper Pipe & Fittings",
       description:
         "Copper is often used in plumbing due to its excellent heat and corrosion resistance. It's also lightweight, recyclable, and easy to install.",
-      image: "/images/products/copper.png",
+      image: CopperPipeFittings,
     },
   },
 }
