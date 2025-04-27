@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react"
 import PropTypes from "prop-types"
+import { GatsbyImage } from "gatsby-plugin-image" // ✅ Import GatsbyImage
 import * as styles from "./styles.module.scss"
 import classNames from "classnames"
 
@@ -61,11 +62,15 @@ const ProductTabs = ({ summary, variants }) => {
 
           {/* Image Column */}
           <div className="col-md-6 text-center">
-            <img
-              src={variants[activeTab].image}
-              alt={variants[activeTab].title}
-              className={styles.image}
-            />
+            {variants[activeTab].imageData ? (
+              <GatsbyImage
+                image={variants[activeTab].imageData}
+                alt={variants[activeTab].title}
+                className={styles.image}
+              />
+            ) : (
+              <p>No image available</p> // fallback if no image
+            )}
           </div>
         </div>
       </div>
@@ -82,7 +87,7 @@ ProductTabs.propTypes = {
     PropTypes.shape({
       title: PropTypes.string,
       description: PropTypes.string,
-      image: PropTypes.string,
+      imageData: PropTypes.object, // ✅ updated to expect imageData (gatsbyImageData object)
     })
   ),
 }
