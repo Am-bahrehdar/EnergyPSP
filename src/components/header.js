@@ -54,7 +54,7 @@ const Header = () => {
               <Link
                 className="nav-link text-light"
                 aria-current="page"
-                to="/about-us"
+                to="/contact-us"
               >
                 Contact Us
               </Link>

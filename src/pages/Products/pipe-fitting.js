@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import ProductTabs from "../../components/ProductTabs/Index"
 import pipeFittingData from "../../productsdata/pipefittingdata"
+import Seo from "../../components/seo" // ✅ Import Seo.js
 
 const PipeFittingPage = ({ data }) => {
   const enrichedVariants = {
@@ -22,10 +23,19 @@ const PipeFittingPage = ({ data }) => {
   }
 
   return (
-    <ProductTabs
-      summary={pipeFittingData.summary}
-      variants={enrichedVariants}
-    />
+    <>
+      {/* ✅ SEO section */}
+      <Seo
+        title="Pipe Fittings"
+        description="Explore EnergyPSP's high-quality carbon steel, stainless steel, and copper pipe fittings for industrial applications across North America."
+      />
+
+      {/* ✅ Your main ProductTabs component */}
+      <ProductTabs
+        summary={pipeFittingData.summary}
+        variants={enrichedVariants}
+      />
+    </>
   )
 }
 

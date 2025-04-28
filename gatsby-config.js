@@ -9,10 +9,11 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `Energypsp`,
-    description: `Professional Service Provider`,
-    author: `Amir Bahrehdar`,
-    siteUrl: `https://www.energypsp.com`, // Required for sitemap
+    title: "EnergyPSP",
+    description:
+      "High-quality piping solutions for diverse industries across North America.",
+    author: "@energypsp",
+    siteUrl: "https://www.energypsp.com",
   },
   plugins: [
     `gatsby-plugin-image`,
