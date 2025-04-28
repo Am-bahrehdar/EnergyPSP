@@ -1,58 +1,73 @@
 import React from "react"
-import "bootstrap/dist/css/bootstrap.min.css"
-import "bootstrap/dist/js/bootstrap.bundle.min.js"
-import * as styles from "./styles.module.scss"
+import { graphql, useStaticQuery } from "gatsby"
+import { GatsbyImage } from "gatsby-plugin-image"
 import classNames from "classnames"
-import slide1 from "../../images/Carousel/PIPING-1600x840-1.jpg"
-import slide2 from "../../images/Carousel/POWERPLANT-2022.jpg"
-import slide3 from "../../images/Carousel/Thermal-Power-Plant.jpg"
+import * as styles from "./styles.module.scss"
 
 const Carousel = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      slide1: file(relativePath: { eq: "carousel/slide1.jpg" }) {
+        childImageSharp {
+          gatsbyImageData(
+            width: 1200
+            height: 400
+            placeholder: DOMINANT_COLOR
+            formats: [AUTO, WEBP, AVIF]
+          )
+        }
+      }
+      slide2: file(relativePath: { eq: "carousel/slide2.jpg" }) {
+        childImageSharp {
+          gatsbyImageData(
+            width: 1200
+            height: 400
+            placeholder: DOMINANT_COLOR
+            formats: [AUTO, WEBP, AVIF]
+          )
+        }
+      }
+      slide3: file(relativePath: { eq: "carousel/slide3.jpg" }) {
+        childImageSharp {
+          gatsbyImageData(
+            width: 1200
+            height: 400
+            placeholder: DOMINANT_COLOR
+            formats: [AUTO, WEBP, AVIF]
+          )
+        }
+      }
+    }
+  `)
+
+  const slides = [
+    { image: data.slide1.childImageSharp.gatsbyImageData, alt: "Slide 1" },
+    { image: data.slide2.childImageSharp.gatsbyImageData, alt: "Slide 2" },
+    { image: data.slide3.childImageSharp.gatsbyImageData, alt: "Slide 3" },
+  ]
+
   return (
-    <div className="d-flex justify-content-center px-3 py-4">
+    <div className="container py-5 d-none d-md-block">
+      {/* ✅ Hide carousel on small screens (mobile) */}
       <div
-        id="carousel"
+        id="carouselExampleAutoplaying"
         className={classNames("carousel slide", styles.carousel)}
         data-bs-ride="carousel"
-        style={{ maxWidth: "100%", borderRadius: "12px", overflow: "hidden" }}
       >
         <div className="carousel-inner">
-          <div className="carousel-item active">
-            <img src={slide1} className="d-block w-100" alt="Slide 1" />
-          </div>
-          <div className="carousel-item">
-            <img src={slide2} className="d-block w-100" alt="Slide 2" />
-          </div>
-          <div className="carousel-item">
-            <img src={slide3} className="d-block w-100" alt="Slide 3" />
-          </div>
+          {slides.map((slide, idx) => (
+            <div
+              className={classNames("carousel-item", { active: idx === 0 })}
+              key={idx}
+            >
+              <GatsbyImage
+                image={slide.image}
+                alt={slide.alt}
+                className="d-block w-100"
+              />
+            </div>
+          ))}
         </div>
-
-        <button
-          className="carousel-control-prev"
-          type="button"
-          data-bs-target="#carousel"
-          data-bs-slide="prev"
-        >
-          <span
-            className="carousel-control-prev-icon"
-            aria-hidden="true"
-          ></span>
-          <span className="visually-hidden">Previous</span>
-        </button>
-
-        <button
-          className="carousel-control-next"
-          type="button"
-          data-bs-target="#carousel"
-          data-bs-slide="next"
-        >
-          <span
-            className="carousel-control-next-icon"
-            aria-hidden="true"
-          ></span>
-          <span className="visually-hidden">Next</span>
-        </button>
       </div>
     </div>
   )
