@@ -1,6 +1,5 @@
 .card {
   background: #fffefe;
-
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -13,23 +12,36 @@
   &:hover {
     transform: translateY(-4px);
   }
+
+  .card-body {
+    padding: 1rem;
+  }
+
+  .card-title {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .card-text {
+    font-size: 0.95rem;
+    color: #555;
+  }
 }
 
 .iconWrapper {
-  width: 70px;
-  height: 70px;
-
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
+  background-color: #195688;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 1rem;
 
   img {
-    border-radius: 25px;
-    width: 100px;
-    height: 100px;
-
-    // Optional: Make sure SVG doesn't overflow
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
     display: block;
   }
 }
