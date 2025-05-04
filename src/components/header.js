@@ -71,37 +71,34 @@ const Header = () => {
               </button>
               <ul className="dropdown-menu">
                 <li>
-                  <Link className="dropdown-item" to="/Products/tube/">
-                    Tube
+                  <Link className="dropdown-item" to="/Products/fittings/">
+                    Fitting
                   </Link>
                 </li>
                 <li>
-                  <Link className="dropdown-item" to="/Products/pipe-fitting/">
-                    Pipe & Fitting
+                  <Link className="dropdown-item" to="/Products/pipe-tube/">
+                    Pipe & Tube
                   </Link>
                 </li>
                 <li>
-                  <Link className="dropdown-item" to="/Products/plate-sheet">
-                    Plate & Sheet
+                  <Link className="dropdown-item" to="/Products/plate-profile/">
+                    Plate & Profile
                   </Link>
                 </li>
                 <li>
-                  <Link className="dropdown-item" to="Products/structural">
-                    Structural
+                  <Link className="dropdown-item" to="/Products/flanges/">
+                    Flanges
                   </Link>
                 </li>
                 <li>
                   <li>
-                    <Link
-                      className="dropdown-item"
-                      to="Products/forgings-flanges"
-                    >
-                      Forgings & Flanges
+                    <Link className="dropdown-item" to="/Products/accessories/">
+                      Accessories
                     </Link>
                   </li>
                   <li>
-                    <Link className="dropdown-item" to="Products/valve">
-                      Valve
+                    <Link className="dropdown-item" to="/Products/gasket/">
+                      Gasket
                     </Link>
                   </li>
                 </li>
