@@ -1,3 +1,4 @@
+@use "sass:color";
 .pageWrapper {
   font-family: "Manrope", sans-serif;
 }
@@ -31,7 +32,7 @@
 
   &:hover {
     text-decoration: underline;
-    color: darken(#354fa9, 10%);
+    color: color.adjust(#354fa9, $lightness: -10%);
   }
 }
 
@@ -44,6 +45,6 @@
   transition: color 0.3s ease;
 
   &:hover {
-    color: darken(#354fa9, 10%);
+    color: color.adjust(#354fa9, $lightness: -10%);
   }
 }
