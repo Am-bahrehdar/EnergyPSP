@@ -2,22 +2,22 @@ import React from "react"
 import { graphql } from "gatsby"
 // import { GatsbyImage } from "gatsby-plugin-image"
 import ProductTabs from "../../components/ProductTabs/Index"
-import pipeFittingData from "../../productsdata/pipefittingdata"
+import pipetubeData from "../../productsdata/pipetubedata"
 import Seo from "../../components/seo" // ✅ Import Seo.js
 
-const PipeFittingPage = ({ data }) => {
+const PipeTubePage = ({ data }) => {
   const enrichedVariants = {
-    ...pipeFittingData.variants,
+    ...pipetubeData.variants,
     "Carbon Steel": {
-      ...pipeFittingData.variants["Carbon Steel"],
+      ...pipetubeData.variants["Carbon Steel"],
       imageData: data.carbonSteel.childImageSharp.gatsbyImageData,
     },
     "Stainless Steel": {
-      ...pipeFittingData.variants["Stainless Steel"],
+      ...pipetubeData.variants["Stainless Steel"],
       imageData: data.stainlessSteel.childImageSharp.gatsbyImageData,
     },
     Copper: {
-      ...pipeFittingData.variants["Copper"],
+      ...pipetubeData.variants["Copper"],
       imageData: data.copper.childImageSharp.gatsbyImageData,
     },
   }
@@ -31,10 +31,7 @@ const PipeFittingPage = ({ data }) => {
       />
 
       {/* ✅ Your main ProductTabs component */}
-      <ProductTabs
-        summary={pipeFittingData.summary}
-        variants={enrichedVariants}
-      />
+      <ProductTabs summary={pipetubeData.summary} variants={enrichedVariants} />
     </>
   )
 }
@@ -55,7 +52,7 @@ export const query = graphql`
       }
     }
     stainlessSteel: file(
-      relativePath: { eq: "products/Stainless-Steel-Pipe-Fittings.jpg" }
+      relativePath: { eq: "products/Stainless-Steel-Pipe-Fittings.jpeg" }
     ) {
       childImageSharp {
         gatsbyImageData(
@@ -81,4 +78,4 @@ export const query = graphql`
   }
 `
 
-export default PipeFittingPage
+export default PipeTubePage

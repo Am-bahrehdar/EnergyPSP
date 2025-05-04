@@ -3,50 +3,49 @@ import { Link } from "gatsby"
 import classNames from "classnames"
 import * as styles from "./styles.module.scss"
 import Pipe from "../../images/SVG/pipe-.svg"
-import Tube from "../../images/SVG/tube.svg"
+import Gasket from "../../images/SVG/gasket.svg"
 import PlateSheet from "../../images/SVG/metalsheet.svg"
-import Vavle from "../../images/SVG/valve.svg"
-import Structural from "../../images/SVG/structural.svg"
-import Forging from "../../images/SVG/forging.svg"
+
+import Flanges from "../../images/SVG/flanges.svg"
+import Accessories from "../../images/SVG/accessories.svg"
+import Fitting from "../../images/SVG/fitting.svg"
 const products = [
   {
-    title: "Tube",
-    icon: Tube,
-    link: "/Products/tube/",
-    description:
-      "Explore our wide range of industrial tubes for every application.",
+    title: "Accessories",
+    icon: Accessories,
+    link: "/Products/accessories/",
+    description: "Accessories",
   },
   {
-    title: "Pipe & Fitting",
+    title: "Pipe & Tube",
     icon: Pipe,
-    link: "/Products/pipe-fitting/",
-    description:
-      "High-quality pipes and fittings suited for all industrial uses.",
+    link: "/Products/pipe-tube/",
+    description: "High-quality pipes and Tube suited for all industrial uses.",
   },
   {
-    title: "Plate & Sheet",
+    title: "Plate & Profile",
     icon: PlateSheet,
-    link: "/Products/plate-sheet/",
-    description: "Durable plates and sheets in various grades and sizes.",
+    link: "/Products/plate-profile/",
+    description: "Durable plates and Profile in various grades and sizes.",
   },
   {
-    title: "Structural",
-    icon: Structural,
-    link: "/Products/structural/",
+    title: "Fittings",
+    icon: Fitting,
+    link: "/Products/fittings/",
     description:
-      "Structural products ideal for construction and engineering projects.",
+      "Fittings products ideal for construction and engineering projects.",
   },
   {
-    title: "Forgings & Flanges",
-    icon: Forging,
-    link: "/Products/forgings-flanges/",
-    description: "Premium forgings and flanges built to industry standards.",
+    title: "Flanges",
+    icon: Flanges,
+    link: "/Products/flanges/",
+    description: "Premium flanges built to industry standards.",
   },
   {
-    title: "Valve",
-    icon: Vavle,
-    link: "/Products/valve/",
-    description: "Reliable valve solutions for industrial fluid control.",
+    title: "Gaskets , Nuts & Bolts",
+    icon: Gasket,
+    link: "/Products/gasket/",
+    description: "Gaskets , Nuts & Bolts",
   },
 ]
 
