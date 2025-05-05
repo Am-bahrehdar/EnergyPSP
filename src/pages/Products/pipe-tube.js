@@ -1,9 +1,9 @@
 import React from "react"
 import { graphql } from "gatsby"
-// import { GatsbyImage } from "gatsby-plugin-image"
+import Seo from "../../components/seo"
 import ProductTabs from "../../components/ProductTabs/Index"
 import pipetubeData from "../../productsdata/pipetubedata"
-import Seo from "../../components/seo" // ✅ Import Seo.js
+import Sidebar from "../../components/sidebar"
 
 const PipeTubePage = ({ data }) => {
   const enrichedVariants = {
@@ -24,14 +24,24 @@ const PipeTubePage = ({ data }) => {
 
   return (
     <>
-      {/* ✅ SEO section */}
-      <Seo
-        title="Pipe Fittings"
-        description="Explore EnergyPSP's high-quality carbon steel, stainless steel, and copper pipe fittings for industrial applications across North America."
-      />
+      <div className="container">
+        <Seo
+          title="Pipe Fittings"
+          description="Explore EnergyPSP's high-quality carbon steel, stainless steel, and copper pipe fittings for industrial applications across North America."
+        />
 
-      {/* ✅ Your main ProductTabs component */}
-      <ProductTabs summary={pipetubeData.summary} variants={enrichedVariants} />
+        <div className="d-flex" style={{ minHeight: "100vh" }}>
+          <div className="d-flex flex-column justify-content-center">
+            <Sidebar />
+          </div>
+          <main className="flex-grow-1 p-4">
+            <ProductTabs
+              summary={pipetubeData.summary}
+              variants={enrichedVariants}
+            />
+          </main>
+        </div>
+      </div>
     </>
   )
 }

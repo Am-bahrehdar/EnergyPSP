@@ -1,0 +1,71 @@
+.sidebar {
+  width: 200px;
+  background-color: #0e2954;
+  padding: 1.5rem 1rem;
+  color: white;
+  border: 1px solid #2e8a99;
+  border-radius: 0.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  height: fit-content;
+}
+
+.title {
+  font-size: 1.25rem;
+  color: #ffffff;
+  font-weight: 600;
+  border-bottom: 1px solid #2e8a99;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.productList {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.link {
+  display: block;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.5rem 0;
+  transition: color 0.3s ease;
+}
+
+.link:hover {
+  color: #2e8a99;
+}
+.subList {
+  margin: 0;
+  padding-left: 1rem;
+}
+
+.subLink {
+  display: block;
+  font-size: 0.95rem;
+  color: #ffffffcc;
+  text-decoration: none;
+  padding: 0.25rem 0;
+  transition: color 0.2s ease;
+}
+
+.subLink:hover {
+  color: #2e8a99;
+}
+
+.link {
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 1rem;
+  text-decoration: none;
+  background: none;
+  border: none;
+  padding: 0.5rem 0;
+  cursor: pointer;
+}
+
+.link:hover {
+  color: #2e8a99;
+}
