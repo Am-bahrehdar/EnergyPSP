@@ -4,6 +4,7 @@ import Seo from "../../components/seo"
 import ProductTabs from "../../components/ProductTabs/Index"
 import pipetubeData from "../../productsdata/pipetubedata"
 import Sidebar from "../../components/sidebar"
+import CallToAction from "../../components/calltoaction"
 
 const PipeTubePage = ({ data }) => {
   const enrichedVariants = {
@@ -39,6 +40,7 @@ const PipeTubePage = ({ data }) => {
               summary={pipetubeData.summary}
               variants={enrichedVariants}
             />
+            <CallToAction title="Looking for custom flanges or fittings?"></CallToAction>
           </main>
         </div>
       </div>

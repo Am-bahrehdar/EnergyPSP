@@ -9,14 +9,11 @@ const ProductTabs = ({ summary, variants }) => {
   const [activeTab, setActiveTab] = useState(variantKeys[0])
   const sectionRef = useRef(null)
 
-  // Set tab from URL param on mount
   useEffect(() => {
     const params = new URLSearchParams(window.location.search)
     const urlTab = params.get("tab")
-
     if (urlTab && variantKeys.includes(urlTab)) {
       setActiveTab(urlTab)
-
       setTimeout(() => {
         sectionRef.current?.scrollIntoView({
           behavior: "smooth",
@@ -26,7 +23,6 @@ const ProductTabs = ({ summary, variants }) => {
     }
   }, [variantKeys])
 
-  // Scroll to top of section on tab change
   useEffect(() => {
     sectionRef.current?.scrollIntoView({ behavior: "smooth" })
   }, [activeTab])
@@ -34,13 +30,16 @@ const ProductTabs = ({ summary, variants }) => {
   return (
     <div ref={sectionRef} className="container py-5">
       {/* Summary */}
-      <div className={styles.summary}>
-        <h1 className="fw-bold mb-3">{summary.title}</h1>
+      <div className={styles.summaryBox}>
+        <h1>{summary.title}</h1>
         <p>{summary.description}</p>
       </div>
 
       {/* Tabs */}
-      <ul className={classNames("nav nav-tabs", styles.tabs)} role="tablist">
+      <ul
+        className={classNames("nav nav-tabs fw-bold ", styles.tabs)}
+        role="tablist"
+      >
         {variantKeys.map(key => (
           <li className="nav-item" key={key}>
             <button
@@ -67,15 +66,12 @@ const ProductTabs = ({ summary, variants }) => {
       </ul>
 
       {/* Tab Content */}
-      <div className={classNames("tab-content", styles.tabContent)}>
-        <div className="row align-items-center mt-4 g-2">
-          {/* Text */}
-          <div className="col-md-6 text-center text-md-start mb-4 mb-md-0">
-            <h3 className="fw-semibold">{variants[activeTab].title}</h3>
+      <div className={styles.variantBox}>
+        <div className="row align-items-center g-4">
+          <div className="col-md-6 text-center text-md-start">
+            <h3>{variants[activeTab].title}</h3>
             <p>{variants[activeTab].description}</p>
           </div>
-
-          {/* Image */}
           <div className="col-md-6 text-center">
             {variants[activeTab].imageData ? (
               <GatsbyImage
