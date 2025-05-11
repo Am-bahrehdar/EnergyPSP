@@ -3,6 +3,8 @@ import { graphql } from "gatsby"
 import Seo from "../../components/seo"
 import ProductTabs from "../../components/ProductTabs/Index"
 import flangesData from "../../productsdata/flangesdata"
+import Sidebar from "../../components/sidebar"
+import CallToAction from "../../components/calltoaction"
 
 const FlangesPage = ({ data }) => {
   const enrichedVariants = {
@@ -23,14 +25,25 @@ const FlangesPage = ({ data }) => {
 
   return (
     <>
-      {/* ✅ SEO section */}
-      <Seo
-        title="Flanges"
-        description="Explore EnergyPSP's high-quality carbon steel, stainless steel, and alloy flanges for industrial applications across North America."
-      />
+      <div className="container">
+        <Seo
+          title="Flanges"
+          description="Explore EnergyPSP's high-quality carbon steel, stainless steel, and alloy flanges for industrial applications across North America."
+        />
 
-      {/* ✅ ProductTabs section */}
-      <ProductTabs summary={flangesData.summary} variants={enrichedVariants} />
+        <div className="d-flex" style={{ minHeight: "100vh" }}>
+          <div className="d-flex flex-column justify-content-center">
+            <Sidebar />
+          </div>
+          <main className="flex-grow-1 p-4">
+            <ProductTabs
+              summary={flangesData.summary}
+              variants={enrichedVariants}
+            />
+            <CallToAction title="Looking for custom flanges or fittings?" />
+          </main>
+        </div>
+      </div>
     </>
   )
 }

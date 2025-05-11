@@ -1,32 +1,42 @@
+/* Gasket page styles */
+
 .gasketPage {
   background-color: #f9f9f9;
+  border-radius: 0.5rem;
+  padding: 2rem;
 }
 
 .pageTitle {
-  color: #30384d;
+  color: #2e8a99;
   font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
 }
 
 .pageDescription {
   font-size: 1rem;
   color: #5c5c5c;
+  margin-bottom: 1.5rem;
 }
 
 .tableWrapper {
   border-radius: 0.5rem;
   overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .table {
-  background-color: #fff;
-  border-collapse: collapse; // change from "separate" to "collapse" for clean row lines
   width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
 }
 
 .tableHead th {
-  background-color: #0e2954 !important;
-  color: #fff;
-  font-weight: bold;
+  background-color: #1f6e8c;
+  color: #ffffff;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .th,
@@ -37,13 +47,19 @@
 }
 
 .tr {
-  border-bottom: 1px solid #dee2e6; // line between each item
-}
-
-.tr:last-child {
-  border-bottom: none; // optional: remove line after last row
+  transition: background-color 0.2s ease;
 }
 
 .tr:nth-child(even) {
   background-color: #f1f1f1;
+}
+
+.tr:hover {
+  background-color: #e9f0f5;
+}
+
+/* Ensure table container fits the content height for sidebar alignment */
+.table-responsive {
+  display: block;
+  max-height: none;
 }

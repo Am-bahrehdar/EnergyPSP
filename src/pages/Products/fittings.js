@@ -1,8 +1,10 @@
 import React from "react"
 import { graphql } from "gatsby"
+import Seo from "../../components/seo"
 import ProductTabs from "../../components/ProductTabs/Index"
 import fittingData from "../../productsdata/fittingData"
-import Seo from "../../components/seo"
+import Sidebar from "../../components/sidebar"
+import CallToAction from "../../components/calltoaction"
 
 const FittingsPage = ({ data }) => {
   const enrichedVariants = {
@@ -22,7 +24,6 @@ const FittingsPage = ({ data }) => {
       ...fittingData.variants["Brass and Bronze Fittings"],
       imageData: data.brassBronze.childImageSharp.gatsbyImageData,
     },
-
     "Malleable Iron Fittings": {
       ...fittingData.variants["Malleable Iron Fittings"],
       imageData: data.malleableIron.childImageSharp.gatsbyImageData,
@@ -31,11 +32,25 @@ const FittingsPage = ({ data }) => {
 
   return (
     <>
-      <Seo
-        title="Fittings"
-        description="Discover EnergyPSP's extensive range of industrial fittings, including carbon steel, stainless steel, copper, and specialty materials built for reliable piping connections."
-      />
-      <ProductTabs summary={fittingData.summary} variants={enrichedVariants} />
+      <div className="container">
+        <Seo
+          title="Fittings"
+          description="Discover EnergyPSP's extensive range of industrial fittings, including carbon steel, stainless steel, copper, and specialty materials built for reliable piping connections."
+        />
+
+        <div className="d-flex" style={{ minHeight: "100vh" }}>
+          <div className="d-flex flex-column justify-content-center">
+            <Sidebar />
+          </div>
+          <main className="flex-grow-1 p-4">
+            <ProductTabs
+              summary={fittingData.summary}
+              variants={enrichedVariants}
+            />
+            <CallToAction title="Looking for custom flanges or fittings?" />
+          </main>
+        </div>
+      </div>
     </>
   )
 }
@@ -92,7 +107,6 @@ export const query = graphql`
         )
       }
     }
-
     malleableIron: file(
       relativePath: { eq: "products/fitting/malleable_iron_fittings.avif" }
     ) {

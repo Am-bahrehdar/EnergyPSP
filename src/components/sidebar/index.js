@@ -6,26 +6,32 @@ import * as styles from "./styles.module.scss"
 const categories = [
   {
     title: "Pipe & Tube",
+    slug: "pipe-tube",
     subItems: ["Carbon Steel", "Stainless Steel", "Copper"],
   },
   {
     title: "Fittings",
+    slug: "fittings",
     subItems: ["Carbon Steel", "Stainless Steel", "Forged", "Malleable Iron"],
   },
   {
     title: "Flanges",
+    slug: "flanges",
     subItems: ["Carbon Steel", "Stainless Steel", "Alloy Steel"],
   },
   {
-    title: "Gaskets",
+    title: "Gasket",
+    slug: "gasket",
     subItems: ["Rubber", "Non-Asbestos", "High-Temp", "Nuts & Bolts"],
   },
   {
     title: "Accessories",
+    slug: "accessories",
     subItems: ["Backing Rings", "Suction Diffusers", "Sealants"],
   },
   {
-    title: "Plate & Sheet",
+    title: "Plate & Profile",
+    slug: "plate-profile",
     subItems: ["Stainless Steel", "Carbon Steel", "Titanium", "Aluminum"],
   },
 ]
@@ -42,12 +48,12 @@ const Sidebar = () => {
       <h2 className={classNames(styles.title, "mb-4")}>Products</h2>
 
       <ul className={classNames(styles.productList, "list-unstyled")}>
-        {categories.map((cat, index) => (
-          <li key={index}>
+        {categories.map((cat, idx) => (
+          <li key={idx} className="mb-2">
             <button
               className={classNames(styles.link, "btn w-100 text-start")}
-              onClick={() => toggle(index)}
-              aria-expanded={open === index}
+              onClick={() => toggle(idx)}
+              aria-expanded={open === idx}
             >
               {cat.title}
             </button>
@@ -55,18 +61,24 @@ const Sidebar = () => {
             <ul
               className={classNames(styles.subList, "ps-3 list-unstyled")}
               style={{
-                maxHeight: open === index ? "500px" : "0",
+                maxHeight: open === idx ? "500px" : "0",
                 overflow: "hidden",
                 transition: "max-height 0.4s ease",
               }}
             >
-              {cat.subItems.map((item, i) => (
-                <li key={i}>
-                  <Link className={styles.subLink} to="/">
-                    {item}
-                  </Link>
-                </li>
-              ))}
+              {cat.subItems.map((item, j) => {
+                const variantParam = encodeURIComponent(item)
+                return (
+                  <li key={j} className="mb-1">
+                    <Link
+                      className={styles.subLink}
+                      to={`/Products/${cat.slug}/?tab=${variantParam}`}
+                    >
+                      {item}
+                    </Link>
+                  </li>
+                )
+              })}
             </ul>
           </li>
         ))}
