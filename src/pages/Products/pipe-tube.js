@@ -24,27 +24,27 @@ const PipeTubePage = ({ data }) => {
   }
 
   return (
-    <>
-      <div className="container">
-        <Seo
-          title="Pipe Fittings"
-          description="Explore EnergyPSP's high-quality carbon steel, stainless steel, and copper pipe fittings for industrial applications across North America."
-        />
+    <div className="container">
+      <Seo
+        title="Pipe Fittings"
+        description="Explore EnergyPSP's high-quality carbon steel, stainless steel, and copper pipe fittings for industrial applications across North America."
+      />
 
-        <div className="d-flex" style={{ minHeight: "100vh" }}>
-          <div className="d-flex flex-column justify-content-center">
-            <Sidebar />
-          </div>
-          <main className="flex-grow-1 p-4">
-            <ProductTabs
-              summary={pipetubeData.summary}
-              variants={enrichedVariants}
-            />
-            <CallToAction title="Looking for custom flanges or fittings?"></CallToAction>
-          </main>
+      <div className="d-flex" style={{ minHeight: "100vh" }}>
+        {/* Sidebar hidden on md and below */}
+        <div className="d-none d-lg-flex flex-column justify-content-center me-4">
+          <Sidebar />
         </div>
+
+        <main className="flex-grow-1 p-4">
+          <ProductTabs
+            summary={pipetubeData.summary}
+            variants={enrichedVariants}
+          />
+          <CallToAction title="Looking for custom flanges or fittings?" />
+        </main>
       </div>
-    </>
+    </div>
   )
 }
 

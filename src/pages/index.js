@@ -2,6 +2,7 @@ import * as React from "react"
 import Seo from "../components/seo"
 import Carousel from "../components/Carousel/Index"
 import ProductCard from "../components/productCard/index"
+import SummarySection from "../components/summarysection"
 
 const IndexPage = () => (
   <>
@@ -12,6 +13,7 @@ const IndexPage = () => (
     <main>
       <Carousel />
       <ProductCard />
+      <SummarySection />
     </main>
   </>
 )

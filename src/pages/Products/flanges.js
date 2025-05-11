@@ -32,7 +32,7 @@ const FlangesPage = ({ data }) => {
         />
 
         <div className="d-flex" style={{ minHeight: "100vh" }}>
-          <div className="d-flex flex-column justify-content-center">
+          <div className="d-flex flex-column justify-content-center d-none d-none d-lg-flex">
             <Sidebar />
           </div>
           <main className="flex-grow-1 p-4">

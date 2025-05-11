@@ -28,7 +28,7 @@ const ProductTabs = ({ summary, variants }) => {
   }, [activeTab])
 
   return (
-    <div ref={sectionRef} className="container py-5">
+    <div ref={sectionRef} className="container py-5 ">
       {/* Summary */}
       <div className={styles.summaryBox}>
         <h1>{summary.title}</h1>
@@ -37,7 +37,7 @@ const ProductTabs = ({ summary, variants }) => {
 
       {/* Tabs */}
       <ul
-        className={classNames("nav nav-tabs fw-bold ", styles.tabs)}
+        className={classNames("nav nav-tabs fw-bold  ", styles.tabs)}
         role="tablist"
       >
         {variantKeys.map(key => (

@@ -20,7 +20,7 @@ const GasketPage = () => {
 
       <div className="d-flex" style={{ minHeight: "100vh" }}>
         {/* Sidebar vertically centered to match Pipe page */}
-        <div className="d-flex flex-column justify-content-center me-4">
+        <div className="d-flex flex-column justify-content-center me-4 d-none d-lg-flex">
           <Sidebar />
         </div>
 

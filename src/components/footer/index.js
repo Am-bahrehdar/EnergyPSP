@@ -18,7 +18,7 @@ const FooterComponent = () => {
               styles.link,
               "btn btn-link text-decoration-none"
             )}
-            href="/terms-of-service"
+            href="/"
           >
             Terms of Service
           </a>
@@ -27,7 +27,7 @@ const FooterComponent = () => {
               styles.link,
               "btn btn-link text-decoration-none"
             )}
-            href="/privacy-policy"
+            href="/"
           >
             Privacy Policy
           </a>

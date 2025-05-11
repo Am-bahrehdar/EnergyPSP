@@ -21,7 +21,7 @@ const AccessoriesPage = () => {
       {/* Layout: sidebar and main content split */}
       <div className="d-flex" style={{ minHeight: "100vh" }}>
         {/* Sidebar vertically centered */}
-        <div className="d-flex flex-column justify-content-center me-4">
+        <div className="d-flex flex-column justify-content-center d-none d-lg-flex ">
           <Sidebar />
         </div>
 
