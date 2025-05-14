@@ -1,8 +1,25 @@
+// gatsby-node.js
+
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+
 /**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-node/
+ * Tweak Webpack’s MiniCssExtractPlugin to ignore CSS order conflicts.
  */
+exports.onCreateWebpackConfig = ({ actions, getConfig }) => {
+  const config = getConfig()
+
+  config.plugins = config.plugins.map(plugin => {
+    if (plugin.constructor.name === "MiniCssExtractPlugin") {
+      return new MiniCssExtractPlugin({
+        ...plugin.options,
+        ignoreOrder: true,
+      })
+    }
+    return plugin
+  })
+
+  actions.replaceWebpackConfig(config)
+}
 
 /**
  * @type {import('gatsby').GatsbyNode['createPages']}
