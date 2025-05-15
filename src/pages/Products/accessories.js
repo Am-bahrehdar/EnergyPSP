@@ -1,4 +1,6 @@
-import React from "react"
+// src/pages/products/accessories.js
+import * as React from "react"
+import Layout from "../../components/layout"
 import Seo from "../../components/seo"
 import accessoriesData from "../../productsdata/accessoriesData"
 import Sidebar from "../../components/sidebar"
@@ -12,20 +14,13 @@ const AccessoriesPage = () => {
 
   return (
     <div className="container py-5">
-      {/* SEO metadata */}
-      <Seo
-        title="Accessories"
-        description="Discover EnergyPSP's high-quality pipe accessories including backing rings, suction diffusers, supports, and sealants — essential for safe and stable pipeline systems."
-      />
-
-      {/* Layout: sidebar and main content split */}
       <div className="d-flex" style={{ minHeight: "100vh" }}>
-        {/* Sidebar vertically centered */}
-        <div className="d-flex flex-column justify-content-center d-none d-lg-flex ">
+        {/* Sidebar vertically centered on larger screens */}
+        <div className="d-none d-lg-flex flex-column justify-content-center me-4">
           <Sidebar />
         </div>
 
-        {/* Main content */}
+        {/* Main content area */}
         <main className="flex-grow-1 p-4">
           {/* Summary styled like ProductTabs */}
           <div className={tabStyles.summaryBox}>
@@ -72,5 +67,13 @@ const AccessoriesPage = () => {
     </div>
   )
 }
+
+export const Head = ({ location }) => (
+  <Seo
+    title="Accessories"
+    description="Discover EnergyPSP's high-quality pipe accessories including backing rings, suction diffusers, supports, and sealants — essential for safe and stable pipeline systems."
+    pathname={location.pathname}
+  />
+)
 
 export default AccessoriesPage

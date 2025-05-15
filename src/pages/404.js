@@ -15,4 +15,11 @@ const NotFoundPage = () => (
     </Link>
   </main>
 )
+export const Head = () => (
+  <Seo
+    title="404: Page Not Found"
+    description="The page you are looking for does not exist."
+    pathname="/404/"
+  />
+)
 export default NotFoundPage

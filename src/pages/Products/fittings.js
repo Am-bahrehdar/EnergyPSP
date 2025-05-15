@@ -1,5 +1,7 @@
-import React from "react"
+// src/pages/products/fittings.js
+import * as React from "react"
 import { graphql } from "gatsby"
+import Layout from "../../components/layout"
 import Seo from "../../components/seo"
 import ProductTabs from "../../components/ProductTabs/Index"
 import fittingData from "../../productsdata/fittingData"
@@ -31,17 +33,15 @@ const FittingsPage = ({ data }) => {
   }
 
   return (
-    <>
+    <Layout>
       <div className="container">
-        <Seo
-          title="Fittings"
-          description="Discover EnergyPSP's extensive range of industrial fittings, including carbon steel, stainless steel, copper, and specialty materials built for reliable piping connections."
-        />
-
         <div className="d-flex" style={{ minHeight: "100vh" }}>
-          <div className="d-flex flex-column justify-content-center d-none d-lg-flex">
+          {/* Sidebar vertically centered on larger screens */}
+          <div className="d-none d-lg-flex flex-column justify-content-center me-4">
             <Sidebar />
           </div>
+
+          {/* Main content area */}
           <main className="flex-grow-1 p-4">
             <ProductTabs
               summary={fittingData.summary}
@@ -51,9 +51,17 @@ const FittingsPage = ({ data }) => {
           </main>
         </div>
       </div>
-    </>
+    </Layout>
   )
 }
+
+export const Head = ({ location }) => (
+  <Seo
+    title="Fittings"
+    description="Discover EnergyPSP's extensive range of industrial fittings, including carbon steel, stainless steel, copper, and specialty materials built for reliable piping connections."
+    pathname={location.pathname}
+  />
+)
 
 export const query = graphql`
   query {

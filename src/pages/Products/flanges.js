@@ -1,5 +1,7 @@
-import React from "react"
+// src/pages/products/flanges.js
+import * as React from "react"
 import { graphql } from "gatsby"
+import Layout from "../../components/layout"
 import Seo from "../../components/seo"
 import ProductTabs from "../../components/ProductTabs/Index"
 import flangesData from "../../productsdata/flangesdata"
@@ -24,17 +26,15 @@ const FlangesPage = ({ data }) => {
   }
 
   return (
-    <>
+    <Layout>
       <div className="container">
-        <Seo
-          title="Flanges"
-          description="Explore EnergyPSP's high-quality carbon steel, stainless steel, and alloy flanges for industrial applications across North America."
-        />
-
         <div className="d-flex" style={{ minHeight: "100vh" }}>
-          <div className="d-flex flex-column justify-content-center d-none d-none d-lg-flex">
+          {/* Sidebar vertically centered on larger screens */}
+          <div className="d-none d-lg-flex flex-column justify-content-center me-4">
             <Sidebar />
           </div>
+
+          {/* Main content area */}
           <main className="flex-grow-1 p-4">
             <ProductTabs
               summary={flangesData.summary}
@@ -44,9 +44,17 @@ const FlangesPage = ({ data }) => {
           </main>
         </div>
       </div>
-    </>
+    </Layout>
   )
 }
+
+export const Head = ({ location }) => (
+  <Seo
+    title="Flanges"
+    description="Explore EnergyPSP’s high-quality carbon steel, stainless steel, and alloy flanges for industrial applications across North America."
+    pathname={location.pathname}
+  />
+)
 
 export const query = graphql`
   query {

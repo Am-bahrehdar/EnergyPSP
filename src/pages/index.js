@@ -8,7 +8,8 @@ const IndexPage = () => (
   <>
     <Seo
       title="Home"
-      description="Welcome to Energy PSP – your source for industrial piping, valves, and gaskets."
+      description="High-quality piping solutions—tubes, fittings, flanges, extrusions, and more."
+      pathname={location.pathname}
     />
     <main>
       <Carousel />

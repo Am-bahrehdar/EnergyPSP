@@ -1,14 +1,16 @@
-/**
- * SEO component that queries for data with
- * Gatsby's useStaticQuery React hook
- *
- * See: https://www.gatsbyjs.com/docs/how-to/querying-data/use-static-query/
- */
-
-import * as React from "react"
+// src/components/seo.js
+import React from "react"
+import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-function Seo({ description, title, children }) {
+export default function Seo({
+  title,
+  description,
+  image,
+  pathname,
+  lang = "en",
+  meta = [],
+}) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -16,30 +18,40 @@ function Seo({ description, title, children }) {
           siteMetadata {
             title
             description
-            author
+            siteUrl
           }
         }
       }
     `
   )
 
-  const metaDescription = description || site.siteMetadata.description
-  const defaultTitle = site.siteMetadata?.title
+  const {
+    title: defaultTitle,
+    description: defaultDesc,
+    siteUrl,
+  } = site.siteMetadata
+
+  const seo = {
+    title: title ? `${title} | ${defaultTitle}` : defaultTitle,
+    description: description || defaultDesc,
+    url: `${siteUrl}${pathname || "/"}`,
+    image: image ? `${siteUrl}${image}` : undefined,
+  }
 
   return (
-    <>
-      <title>{defaultTitle ? `${title} | ${defaultTitle}` : title}</title>
-      <meta name="description" content={metaDescription} />
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={metaDescription} />
-      <meta property="og:type" content="website" />
-      <meta name="twitter:card" content="summary" />
-      <meta name="twitter:creator" content={site.siteMetadata?.author || ``} />
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={metaDescription} />
-      {children}
-    </>
+    <Helmet
+      htmlAttributes={{ lang }}
+      title={seo.title}
+      meta={[
+        { name: "description", content: seo.description },
+        { property: "og:title", content: seo.title },
+        { property: "og:description", content: seo.description },
+        { property: "og:type", content: "website" },
+        ...(seo.image ? [{ property: "og:image", content: seo.image }] : []),
+        { property: "og:url", content: seo.url },
+      ].concat(meta)}
+    >
+      <link rel="canonical" href={seo.url} />
+    </Helmet>
   )
 }
-
-export default Seo
