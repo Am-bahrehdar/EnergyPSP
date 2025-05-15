@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import Logo from "../images/Energypsp.png"
 import * as styles from "../components/404/styles.module.scss"
+import Seo from "../components/seo"
 
 const NotFoundPage = () => (
   <main className={styles.container}>

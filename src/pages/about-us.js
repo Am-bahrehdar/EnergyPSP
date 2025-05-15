@@ -1,6 +1,6 @@
 // src/pages/about.js
 import * as React from "react"
-import Layout from "../components/layout"
+
 import Seo from "../components/seo"
 import classNames from "classnames"
 import * as styles from "../components/about/styles.module.scss"

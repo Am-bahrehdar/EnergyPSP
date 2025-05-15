@@ -1,7 +1,7 @@
 // src/pages/products/fittings.js
 import * as React from "react"
 import { graphql } from "gatsby"
-import Layout from "../../components/layout"
+
 import Seo from "../../components/seo"
 import ProductTabs from "../../components/ProductTabs/Index"
 import fittingData from "../../productsdata/fittingData"
@@ -33,25 +33,23 @@ const FittingsPage = ({ data }) => {
   }
 
   return (
-    <Layout>
-      <div className="container">
-        <div className="d-flex" style={{ minHeight: "100vh" }}>
-          {/* Sidebar vertically centered on larger screens */}
-          <div className="d-none d-lg-flex flex-column justify-content-center me-4">
-            <Sidebar />
-          </div>
-
-          {/* Main content area */}
-          <main className="flex-grow-1 p-4">
-            <ProductTabs
-              summary={fittingData.summary}
-              variants={enrichedVariants}
-            />
-            <CallToAction title="Looking for custom flanges or fittings?" />
-          </main>
+    <div className="container">
+      <div className="d-flex" style={{ minHeight: "100vh" }}>
+        {/* Sidebar vertically centered on larger screens */}
+        <div className="d-none d-lg-flex flex-column justify-content-center me-4">
+          <Sidebar />
         </div>
+
+        {/* Main content area */}
+        <main className="flex-grow-1 p-4">
+          <ProductTabs
+            summary={fittingData.summary}
+            variants={enrichedVariants}
+          />
+          <CallToAction title="Looking for custom flanges or fittings?" />
+        </main>
       </div>
-    </Layout>
+    </div>
   )
 }
 
@@ -74,7 +72,7 @@ export const query = graphql`
           height: 500
           aspectRatio: 1
           placeholder: BLURRED
-          formats: [AUTO, WEBP, AVIF]
+          formats: [AUTO, WEBP]
         )
       }
     }
@@ -87,7 +85,7 @@ export const query = graphql`
           height: 500
           aspectRatio: 1
           placeholder: BLURRED
-          formats: [AUTO, WEBP, AVIF]
+          formats: [AUTO, WEBP]
         )
       }
     }
@@ -98,7 +96,7 @@ export const query = graphql`
           height: 500
           aspectRatio: 1
           placeholder: BLURRED
-          formats: [AUTO, WEBP, AVIF]
+          formats: [AUTO, WEBP]
         )
       }
     }
@@ -111,7 +109,7 @@ export const query = graphql`
           height: 500
           aspectRatio: 1
           placeholder: BLURRED
-          formats: [AUTO, WEBP, AVIF]
+          formats: [AUTO, WEBP]
         )
       }
     }
@@ -124,7 +122,7 @@ export const query = graphql`
           height: 500
           aspectRatio: 1
           placeholder: BLURRED
-          formats: [AUTO, WEBP, AVIF]
+          formats: [AUTO, WEBP]
         )
       }
     }

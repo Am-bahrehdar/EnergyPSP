@@ -59,7 +59,7 @@ export const query = graphql`
           height: 500
           aspectRatio: 1
           placeholder: BLURRED
-          formats: [AUTO, WEBP, AVIF]
+          formats: [AUTO, WEBP]
         )
       }
     }
@@ -72,7 +72,7 @@ export const query = graphql`
           height: 500
           aspectRatio: 1
           placeholder: BLURRED
-          formats: [AUTO, WEBP, AVIF]
+          formats: [AUTO, WEBP]
         )
       }
     }
@@ -83,7 +83,7 @@ export const query = graphql`
           height: 500
           aspectRatio: 1
           placeholder: BLURRED
-          formats: [AUTO, WEBP, AVIF]
+          formats: [AUTO, WEBP]
         )
       }
     }

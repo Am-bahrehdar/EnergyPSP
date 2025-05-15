@@ -1,6 +1,6 @@
 // src/pages/contact.js
 import * as React from "react"
-import Layout from "../components/layout"
+
 import Seo from "../components/seo"
 import classNames from "classnames"
 import { Phone, Mail } from "lucide-react"

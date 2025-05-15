@@ -1,6 +1,6 @@
 // src/pages/products/accessories.js
 import * as React from "react"
-import Layout from "../../components/layout"
+
 import Seo from "../../components/seo"
 import accessoriesData from "../../productsdata/accessoriesData"
 import Sidebar from "../../components/sidebar"

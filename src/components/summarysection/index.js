@@ -21,7 +21,7 @@ const SummarySection = ({
           gatsbyImageData(
             width: 600
             placeholder: DOMINANT_COLOR
-            formats: [AUTO, WEBP, AVIF]
+            formats: [AUTO, WEBP]
           )
         }
       }

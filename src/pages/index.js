@@ -9,7 +9,6 @@ const IndexPage = () => (
     <Seo
       title="Home"
       description="High-quality piping solutions—tubes, fittings, flanges, extrusions, and more."
-      pathname={location.pathname}
     />
     <main>
       <Carousel />

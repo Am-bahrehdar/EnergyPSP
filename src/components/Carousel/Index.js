@@ -13,7 +13,7 @@ const Carousel = () => {
             width: 1200
             height: 400
             placeholder: DOMINANT_COLOR
-            formats: [AUTO, WEBP, AVIF]
+            formats: [AUTO, WEBP]
           )
         }
       }
@@ -23,7 +23,7 @@ const Carousel = () => {
             width: 1200
             height: 400
             placeholder: DOMINANT_COLOR
-            formats: [AUTO, WEBP, AVIF]
+            formats: [AUTO, WEBP]
           )
         }
       }
@@ -33,7 +33,7 @@ const Carousel = () => {
             width: 1200
             height: 400
             placeholder: DOMINANT_COLOR
-            formats: [AUTO, WEBP, AVIF]
+            formats: [AUTO, WEBP]
           )
         }
       }
